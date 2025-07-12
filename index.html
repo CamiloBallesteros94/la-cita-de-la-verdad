@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cita de la Verdad</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #fff8f1;
+      margin: 0;
+    }
+    h1 {
+      color: #7b3f00;
+      text-align: center;
+    }
+    #card {
+      background: #fff;
+      border: 2px solid #d6a87a;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      padding: 30px;
+      max-width: 80%;
+      text-align: center;
+      font-size: 1.3em;
+      color: #5e3b1d;
+      min-height: 150px;
+    }
+    #level {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #a5673f;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #a5673f;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #7b3f00;
+    }
+  </style>
+</head>
+<body>
+  <h1>❤️ La Cita de la Verdad</h1>
+  <div id="card">Presiona el botón para sacar una carta</div>
+  <div id="level"></div>
+  <button onclick="mostrarCarta()">Sacar carta</button>
+
+  <script>
+    const cartas = {
+      "Nivel 1 – Conociéndonos": [
+        "¿Cuál fue tu primera impresión de mí?",
+        "¿Qué canción te recuerda a mí?",
+        "¿Qué te hace reír siempre?",
+        "¿Cuál es tu plan ideal de domingo conmigo?",
+        "¿Qué parte del cuerpo mío te gusta más y cuál del tuyo?",
+        "¿Cuál es tu recuerdo favorito de la infancia?",
+        "¿Qué te hace sentir realmente en paz?",
+        "¿Qué serie, película o libro te marcó y por qué?",
+        "¿Tienes alguna tradición personal que te gusta compartir?",
+        "¿Qué lugar sueñas con visitar conmigo?",
+        "¿Qué sabor te recuerda a tu niñez?",
+        "¿Qué canción te pone de buen humor?",
+        "¿Tienes algún o algunos apodos?",
+        "¿Qué superpoder te gustaría tener por un día?",
+        "¿Qué me dirías si esta fuera nuestra última noche juntos?"
+      ],
+      "Nivel 2 – Mostrándonos": [
+        "¿Qué significa para ti una relación de confianza?",
+        "¿Qué es algo que desearías cambiar de ti mismo?",
+        "¿Cuál ha sido tu mayor miedo en una relación?",
+        "¿Te cuesta pedir ayuda? ¿Por qué?",
+        "¿Qué necesitas cuando te sientes inseguro?",
+        "¿Qué parte de tu historia aún te cuesta contar?",
+        "¿En qué momentos te sientes más vulnerable?",
+        "¿Cuál es tu mayor reto contigo mismo en este momento?",
+        "¿Te cuesta perdonar? ¿A ti o a otros?",
+        "¿Cómo se siente el amor para ti?",
+        "¿Qué te hace sentir inseguro en una relación?",
+        "¿Has amado a alguien que no te correspondía?",
+        "¿Cuándo fue la última vez que lloraste?",
+        "¿Qué aprendiste de tu última gran decepción?",
+        "¿Qué parte de ti estás aprendiendo a aceptar?"
+      ],
+      "Nivel 3 – Sin máscaras": [
+        "¿Alguna vez sentiste que no eras suficiente?",
+        "¿Qué herida emocional sigues cargando?",
+        "¿Cómo puedo quererte mejor?",
+        "¿Qué parte de nuestra relación te da miedo?",
+        "¿Qué deseo profundo te da vergüenza confesar?",
+        "¿Qué parte de ti temes que yo no entienda?",
+        "¿Qué verdad no le has contado a nadie?",
+        "¿Cuál ha sido tu momento más oscuro?",
+        "¿Qué te da vergüenza de tu pasado?",
+        "¿Qué parte de tu cuerpo aún no has aprendido a amar?",
+        "¿Qué secreto te duele guardar?",
+        "¿Hay algo que temes que me aleje?",
+        "¿Cómo te has traicionado a ti mismo alguna vez?",
+        "¿Qué herida llevas que nadie más ve?",
+        "¿Cómo sería amarte sin reservas?"
+      ]
+    };
+
+    function mostrarCarta() {
+      const niveles = Object.keys(cartas);
+      const nivel = niveles[Math.floor(Math.random() * niveles.length)];
+      const preguntas = cartas[nivel];
+      const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+      document.getElementById("card").innerText = pregunta;
+      document.getElementById("level").innerText = nivel;
+    }
+  </script>
+</body>
+</html>
